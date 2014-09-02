@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<items xmlns="http://www.w3.org/1999/xhtml">
+    <item url="http://www.google.com/">Google</item>
+    <item url="http://www.yahoo.com/">Yahoo!</item>
+    <item url="http://www.facebook.com/">Facebook</item>
+    <item url="http://www.twitter.com/">Twitter</item>
+    <item url="http://www.microsoft.com/">Microsoft</item>
+    <item url="http://www.nokia.com/">Nokia</item>
+    <item url="http://www.samsung.com/">Samsung</item>
+    <item url="http://www.synechron.com/">Synechron</item>
+    <item url="http://www.synestudio.com/">SyneStudio</item>
+    <item url="http://www.synemobile.com/">SyneMobile</item>
+</items>

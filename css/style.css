@@ -1,0 +1,166 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    width: 960px;
+    margin: 15px auto 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.wrapper:before,
+.wrapper:after,
+.form-group:before,
+.form-group:after {
+    content: " ";
+    display: table;
+}
+.wrapper:after,
+.form-group:after {
+    clear: both;
+}
+
+textarea.wrapper  {
+    display: block;
+    outline: none;
+    padding: 15px;
+    width: 930px;
+    height: 200px;
+}
+
+.d1 {
+    background-color: #008000;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    cursor: pointer;
+}
+.d2 {
+    background-color: #00F;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 100px;
+    height: 100px;
+}
+.d3 {
+    background-color: #F00;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+div.ErrMsgDiv > span.field-validation-error {
+    display: block;
+    height: 100px;
+    background: red;
+}
+
+.alist {
+    float: left;
+    width: 449px;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+}
+
+.alist a {
+    display: block;
+    height: 28px;
+    width: 200px;
+    padding: 0 10px;
+    color: #fff;
+    background: #000;
+    line-height: 28px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+.alist .clicked {
+    background: #ccc;
+    color: #424242;
+}
+
+.form {
+    padding: 15px;
+    border-top: 1px solid #ccc;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.form label {
+    font-weight: bold;
+    width: 80px;
+    display: block;
+    padding: 0 10px 0 0;
+    float: left;
+    line-height: 28px;
+}
+.form label:after {
+    content: ":";
+    float: right;
+}
+.form-input {
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 348px;
+    float: right;
+    display: block;
+}
+.form-input:focus {
+    border-color: #424242;
+}
+.form-input-alert {
+    border-color: #FF3300;
+}
+.form-input-alert:focus {
+    border-color: #D43D1A;
+}
+
+.error-box {
+    background: #FEE5AC;
+    border: 1px solid #FFB90F;
+    border-radius: 6px;
+    color: #FF3300;
+    padding: 15px;
+    display: none;
+    margin: 5px 0 0;
+}
+.error-box > p {
+    padding: 0;
+    margin: 0 0 15px;
+}
+.error-box > p:last-child {
+    margin-bottom: 0;
+}
+
+.show {
+    display: block !important;
+}
+
+.right {
+    float: right;
+    width: 480px;
+    border-left: 1px solid #ccc;
+    margin-left: -1px;
+}
+
+.modal {
+    padding: 15px;
+    display: none;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+.btn-set {
+    padding: 15px;
+}
