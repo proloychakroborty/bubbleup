@@ -1,4 +1,4 @@
-proloychakroborty
+JavaScript BubbleUp Example
 =================
 
-Pages
+This page is demo of simple javascript bubbleup event.
