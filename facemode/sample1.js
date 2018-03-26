@@ -115,5 +115,7 @@
     }
 
     var selectDevice = document.getElementById('webcam');
-    selectDevice.onchange = onWebcam;
+    document.addEventListener('change', function (e) {
+        onWebcam();
+    });
 }());
