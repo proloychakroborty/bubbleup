@@ -47,7 +47,7 @@
                             audio: false
                         })
                         .then(function (stream) {
-                            document.getElementById('type').innerHTML = 'Second Try - no facingMode';
+                            document.getElementById('type').innerHTML = 'Third Try - no facingMode';
                             var video = document.createElement('video');
                             video.muted = true;
                             video.srcObject = stream;
