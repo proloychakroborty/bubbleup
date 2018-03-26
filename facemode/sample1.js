@@ -1,9 +1,10 @@
-/*global navigator, console, document */
+/*global navigator, console, document, window */
 /*jslint es5: true */
 /*eslint no-console: ["error", { allow: ["log"] }] */
 
 (function () {
     'use strict';
+    window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
 
     navigator.mediaDevices
         .getUserMedia({
@@ -18,7 +19,7 @@
             document.getElementById('type').innerHTML = 'First Try - facingMode: user';
             var video = document.createElement('video');
             video.muted = true;
-            video.srcObject = stream;
+            video.src = window.URL.createObjectURL(stream);
             (document.body || document.documentElement).appendChild(video);
         })
         .catch(function (error1) {
@@ -36,7 +37,7 @@
                     document.getElementById('type').innerHTML = 'Second Try - facingMode: environment';
                     var video = document.createElement('video');
                     video.muted = true;
-                    video.srcObject = stream;
+                    video.src = window.URL.createObjectURL(stream);
                     (document.body || document.documentElement).appendChild(video);
                 })
                 .catch(function (error2) {
@@ -50,7 +51,7 @@
                             document.getElementById('type').innerHTML = 'Third Try - no facingMode';
                             var video = document.createElement('video');
                             video.muted = true;
-                            video.srcObject = stream;
+                            video.src = window.URL.createObjectURL(stream);
                             (document.body || document.documentElement).appendChild(video);
                         })
                         .catch(function (error3) {
