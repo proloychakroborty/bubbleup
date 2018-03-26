@@ -48,8 +48,13 @@
 
     function onWebcam() {
         var selectDevice = document.getElementById('webcam'),
+            videoTag = document.getElementsByTagName('video')[0],
             device = selectDevice.value,
             mediaConstraint = {};
+
+        if (videoTag && videoTag.parentNode) {
+            videoTag.parentNode.removeChild(video);
+        }
 
         if (device) {
             mediaConstraint = {
