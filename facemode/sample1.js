@@ -4,7 +4,6 @@
 
 (function () {
     'use strict';
-    var type = document.getElementById('type');
 
     navigator.mediaDevices
         .getUserMedia({
@@ -16,7 +15,7 @@
             audio: false
         })
         .then(function (stream) {
-            type.innerHTML = 'First Try - facingMode: user';
+            document.getElementById('type').innerHTML = 'First Try - facingMode: user';
             var video = document.createElement('video');
             video.muted = true;
             video.srcObject = stream;
@@ -34,7 +33,7 @@
                     audio: false
                 })
                 .then(function (stream) {
-                    type.innerHTML = 'Second Try - facingMode: environment';
+                    document.getElementById('type').innerHTML = 'Second Try - facingMode: environment';
                     var video = document.createElement('video');
                     video.muted = true;
                     video.srcObject = stream;
@@ -48,7 +47,7 @@
                             audio: false
                         })
                         .then(function (stream) {
-                            type.innerHTML = 'Second Try - no facingMode';
+                            document.getElementById('type').innerHTML = 'Second Try - no facingMode';
                             var video = document.createElement('video');
                             video.muted = true;
                             video.srcObject = stream;
