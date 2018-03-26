@@ -1,4 +1,4 @@
-/*global navigator, console, document */
+/*global navigator, console, document, alert */
 /*jslint es5: true */
 /*eslint no-console: ["error", { allow: ["log"] }] */
 
@@ -6,11 +6,13 @@
     'use strict';
 
     try {
-        console.log('First Try - facingMode: user');
+        alert('First Try - facingMode: user');
         navigator.mediaDevices
             .getUserMedia({
                 video: {
-                    facingMode: "user"
+                    facingMode: {
+                        exact: "user"
+                    }
                 },
                 audio: false
             })
@@ -25,11 +27,13 @@
             });
     } catch (e1) {
         try {
-            console.log('Second Try - facingMode: environment');
+            alert('Second Try - facingMode: environment');
             navigator.mediaDevices
                 .getUserMedia({
                     video: {
-                        facingMode: "environment"
+                        facingMode: {
+                            exact: "environment"
+                        }
                     },
                     audio: false
                 })
@@ -44,7 +48,7 @@
                 });
         } catch (e2) {
             try {
-                console.log('Second Try - no facingMode');
+                alert('Second Try - no facingMode');
                 navigator.mediaDevices
                     .getUserMedia({
                         video: true,
