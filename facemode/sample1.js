@@ -1,12 +1,12 @@
-/*global navigator, console, document, alert */
+/*global navigator, console, document */
 /*jslint es5: true */
 /*eslint no-console: ["error", { allow: ["log"] }] */
 
 (function () {
     'use strict';
-
+    var type = document.getElementById('type');
     try {
-        alert('First Try - facingMode: user');
+        type.innerHTML = 'First Try - facingMode: user';
         navigator.mediaDevices
             .getUserMedia({
                 video: {
@@ -27,7 +27,7 @@
             });
     } catch (e1) {
         try {
-            alert('Second Try - facingMode: environment');
+            type.innerHTML = 'Second Try - facingMode: environment';
             navigator.mediaDevices
                 .getUserMedia({
                     video: {
@@ -48,7 +48,7 @@
                 });
         } catch (e2) {
             try {
-                alert('Second Try - no facingMode');
+                type.innerHTML = 'Second Try - no facingMode';
                 navigator.mediaDevices
                     .getUserMedia({
                         video: true,
