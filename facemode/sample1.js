@@ -40,6 +40,8 @@
                 if (video && video.parentNode) {
                     video.parentNode.removeChild(video);
                 }
+
+                onWebcam();
             });
         });
     });
@@ -111,8 +113,6 @@
                     });
             });
     }
-
-    onWebcam();
 
     var selectDevice = document.getElementById('webcam');
     selectDevice.onchange = onWebcam;
