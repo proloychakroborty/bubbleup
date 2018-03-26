@@ -5,28 +5,25 @@
 (function () {
     'use strict';
     var type = document.getElementById('type');
-    try {
-        navigator.mediaDevices
-            .getUserMedia({
-                video: {
-                    facingMode: {
-                        exact: "user"
-                    }
-                },
-                audio: false
-            })
-            .then(function (stream) {
-                type.innerHTML = 'First Try - facingMode: user';
-                var video = document.createElement('video');
-                video.muted = true;
-                video.srcObject = stream;
-                (document.body || document.documentElement).appendChild(video);
-            })
-            .catch(function (error) {
-                console.log('MediaStream Error', error);
-            });
-    } catch (e1) {
-        try {
+
+    navigator.mediaDevices
+        .getUserMedia({
+            video: {
+                facingMode: {
+                    exact: "user"
+                }
+            },
+            audio: false
+        })
+        .then(function (stream) {
+            type.innerHTML = 'First Try - facingMode: user';
+            var video = document.createElement('video');
+            video.muted = true;
+            video.srcObject = stream;
+            (document.body || document.documentElement).appendChild(video);
+        })
+        .catch(function (error1) {
+            console.log('MediaStream Error 1', error1);
             navigator.mediaDevices
                 .getUserMedia({
                     video: {
@@ -43,29 +40,23 @@
                     video.srcObject = stream;
                     (document.body || document.documentElement).appendChild(video);
                 })
-                .catch(function (error) {
-                    console.log('MediaStream Error', error);
+                .catch(function (error2) {
+                    console.log('MediaStream Error 2', error2);
+                    navigator.mediaDevices
+                        .getUserMedia({
+                            video: true,
+                            audio: false
+                        })
+                        .then(function (stream) {
+                            type.innerHTML = 'Second Try - no facingMode';
+                            var video = document.createElement('video');
+                            video.muted = true;
+                            video.srcObject = stream;
+                            (document.body || document.documentElement).appendChild(video);
+                        })
+                        .catch(function (error3) {
+                            console.log('MediaStream Error 3', error3);
+                        });
                 });
-        } catch (e2) {
-            try {
-                navigator.mediaDevices
-                    .getUserMedia({
-                        video: true,
-                        audio: false
-                    })
-                    .then(function (stream) {
-                        type.innerHTML = 'Second Try - no facingMode';
-                        var video = document.createElement('video');
-                        video.muted = true;
-                        video.srcObject = stream;
-                        (document.body || document.documentElement).appendChild(video);
-                    })
-                    .catch(function (error) {
-                        console.log('MediaStream Error', error);
-                    });
-            } catch (e3) {
-                console.log('error');
-            }
-        }
-    }
+        });
 }());
