@@ -53,7 +53,7 @@
             mediaConstraint = {};
 
         if (videoTag && videoTag.parentNode) {
-            videoTag.parentNode.removeChild(video);
+            videoTag.parentNode.removeChild(videoTag);
         }
 
         if (device) {
