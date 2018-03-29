@@ -67,20 +67,13 @@
                 video: {
                     deviceId: {
                         exact: device
-                    },
-                    facingMode: {
-                        exact: "user"
                     }
                 },
                 audio: false
             };
         } else {
             mediaConstraint = {
-                video: {
-                    facingMode: {
-                        exact: "user"
-                    }
-                },
+                video: true,
                 audio: false
             };
         }
