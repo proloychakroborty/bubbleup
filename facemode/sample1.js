@@ -5,7 +5,7 @@
 (function () {
     'use strict';
     window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
-
+    window.vstream = null;
 
     DetectRTC.load(function () {
         navigator.mediaDevices.getUserMedia({
@@ -56,6 +56,10 @@
             videoTag.parentNode.removeChild(videoTag);
         }
 
+        window.vstream.getTracks().forEach(function (track) {
+            track.stop();
+        });
+
         if (device) {
             mediaConstraint = {
                 video: {
@@ -82,6 +86,7 @@
         navigator.mediaDevices
             .getUserMedia(mediaConstraint)
             .then(function (stream) {
+                window.vstream = stream;
                 document.getElementById('type').innerHTML = 'First Try - facingMode: user';
                 var video = document.createElement('video');
                 video.muted = true;
@@ -94,6 +99,7 @@
                 navigator.mediaDevices
                     .getUserMedia(mediaConstraint)
                     .then(function (stream) {
+                        window.vstream = stream;
                         document.getElementById('type').innerHTML = 'Second Try - facingMode: environment';
                         var video = document.createElement('video');
                         video.muted = true;
@@ -106,6 +112,7 @@
                         navigator.mediaDevices
                             .getUserMedia(mediaConstraint)
                             .then(function (stream) {
+                                window.vstream = stream;
                                 document.getElementById('type').innerHTML = 'Third Try - no facingMode';
                                 var video = document.createElement('video');
                                 video.muted = true;
