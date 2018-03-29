@@ -56,9 +56,11 @@
             videoTag.parentNode.removeChild(videoTag);
         }
 
-        window.vstream.getTracks().forEach(function (track) {
-            track.stop();
-        });
+        if (window.vstream !== null) {
+            window.vstream.getTracks().forEach(function (track) {
+                track.stop();
+            });
+        }
 
         if (device) {
             mediaConstraint = {
